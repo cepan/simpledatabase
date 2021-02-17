@@ -1,0 +1,41 @@
+//****************************************************************************
+//		CREATE AND INSERT
+//****************************************************************************
+
+//----- student table ----------
+make table student fields 	fname, 			lname, 		major, 				age
+insert into student values 	Natasha, 			Hsu, 		Philosophy, 				225
+insert into student values 	Henry, 			Shen, 	Music,	 			221
+insert into student values 	Shawn, 		Pan, 		"Data Science",			19
+select * from student
+
+
+
+//****************************************************************************
+//		SIMPLE SELECT 
+//****************************************************************************
+
+select * from student
+
+//------- simple strings -------------------
+select * from student where lname = Hsu
+
+//----- quoted strings ---------------------
+select * from student where lname = Shen
+
+//-------- non-existing string ------------------
+select * from student where lname = "Does Not Exist"
+
+//****************************************************************************
+//		RELATIONAL OPERATORS:
+//****************************************************************************
+
+
+
+
+
+
+
+
+
+
