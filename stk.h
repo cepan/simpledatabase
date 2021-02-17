@@ -1,7 +1,7 @@
 #ifndef STK_H
 #define STK_H
-#include<token.h>
-#include<table_func.h>
+#include"token.h"
+#include"table_func.h"
 
 using namespace std;
 
