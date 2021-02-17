@@ -4,10 +4,10 @@
 #include<fstream>
 #include<vector>
 #include<cstring>
-#include"const.h"
-#include"map.h"
-#include"mmap.h"
-#include"record.h"
+#include<const.h>
+#include<map.h>
+#include<mmap.h>
+#include<record.h>
 #include<iostream>
 #include<queue>
 #include<stack>
@@ -50,6 +50,7 @@ public:
     vector<int> intersection(vector<int> a , vector<int> b );
     vector<int> union_set(vector<int> a , vector<int> b );
 
+//    void print_indices(int i){cout<<_indices_map[i];}
 
 private:
     string _name;

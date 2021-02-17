@@ -77,7 +77,7 @@ bool _get_token(string input, int& pos, int _table[][MAX_COL], int start_state, 
     char c = input [pos];//grabing every character
     int current_state = start_state;//assumed starting from 0
     bool success = false;    //default
-    int sPos = 0;
+    int sPos;
     int walker = pos;
     bool debug= false;
 

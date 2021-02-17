@@ -1,6 +1,6 @@
 #ifndef TOKEN_H
 #define TOKEN_H
-#include"const.h"
+#include<const.h>
 #include<iostream>
 
 using namespace std;
@@ -16,7 +16,7 @@ public:
 
 
     friend ostream& operator <<(ostream& outs,  token& t){
-        outs<<"|"<<t.token_str()<<"|"<<endl;
+        outs<<"|||"<<t.token_str()<<"|||"<<endl;
         return outs;
     }
 

@@ -1,7 +1,7 @@
 #ifndef STK_H
 #define STK_H
-#include"token.h"
-#include"table_func.h"
+#include<token.h>
+#include<table_func.h>
 
 using namespace std;
 
@@ -34,9 +34,6 @@ public:
         }
         else if(s.get_token(SPACE_MACHINE,str)){
             t=token(str,SPACE);
-        }
-        else if(s.get_token(QUOTE_MACHINE,str)){
-            t= token(str,QUOTE);
         }
         else{
             t= token(str,UNKNOWN_MACHINE);
@@ -75,16 +72,14 @@ public:
            mark_cells(WORD_MACHINE+1,_table,ALPHABET,WORD_MACHINE+1);
            mark_fail(_table,WORD_MACHINE);
            mark_success(_table,WORD_MACHINE+1);
-
        //    //SPACE machine
            mark_cell(SPACE_MACHINE,_table,' ',SPACE_MACHINE+1);
            mark_cell(SPACE_MACHINE+1,_table,' ',SPACE_MACHINE+1);
            mark_fail(_table,SPACE_MACHINE);
            mark_success(_table,SPACE_MACHINE+1);
-
        //    //PUNC machine
-           mark_cells(PUNC_MACHINE,_table,'#','/',PUNC_MACHINE+1);
-           mark_cells(PUNC_MACHINE+1,_table,'#','/',PUNC_MACHINE+1);
+           mark_cells(PUNC_MACHINE,_table,'!','/',PUNC_MACHINE+1);
+           mark_cells(PUNC_MACHINE+1,_table,'!','/',PUNC_MACHINE+1);
            mark_cells(PUNC_MACHINE,_table,':','@',PUNC_MACHINE+1);
            mark_cells(PUNC_MACHINE+1,_table,':','@',PUNC_MACHINE+1);
            mark_cells(PUNC_MACHINE,_table,'[','`',PUNC_MACHINE+1);
@@ -93,22 +88,6 @@ public:
            mark_cells(PUNC_MACHINE+1,_table,'{','~',PUNC_MACHINE+1);
            mark_fail(_table,PUNC_MACHINE);
            mark_success(_table,PUNC_MACHINE+1);
-
-           //Quote machine
-           mark_fail(_table, 25);
-           mark_fail(_table, 26);
-           mark_fail(_table, 27);
-           mark_success(_table, 28);
-           mark_fail(_table, 29);
-           mark_cells(25, _table, 34, 34, 26);         //state [25] --- " ------> [26]
-           mark_cells(26, _table, ALPHABET, 27);        //state [26] --- LETTERS ---> [27]
-           mark_cells(26, _table, PUNCUATION, 27);   //state [26] --- PUNCT ------> [27]
-           mark_cells(27, _table, ALPHABET, 27);        //state [27] --- LETTERS ---> [27]
-           mark_cells(27, _table, PUNCUATION, 27);   //state [27] --- PUNCT ------> [27]
-           mark_cells(27, _table, 34, 34, 28);         //state [27] --- " ------> [28]
-           mark_cells(27, _table, ' ', ' ', 29);       //state [27] --- SPACE ------> [29]
-           mark_cells(29, _table, ALPHABET, 27);        //state [29] --- LETTERS ---> [27]
-           mark_cells(29, _table, PUNCUATION, 27);   //state [29] --- PUNCT ------> [27]
 
          if(debug){
                printprinttable(_table);

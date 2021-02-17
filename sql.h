@@ -1,7 +1,7 @@
 #ifndef SQL_H
 #define SQL_H
-#include"const.h"
-#include"table.h"
+#include<const.h>
+#include<table.h>
 #include"parser.h"
 
 
@@ -14,8 +14,8 @@ class Sql
 {
 public:
     Sql();
-    bool set_string(string command);
     void run(string filename );
+    bool set_string(string command);
 
 
 private:

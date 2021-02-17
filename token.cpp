@@ -27,9 +27,6 @@ string token::type_string(){//NUMBER=1 ALPHA=2 SPACE=3 PUNC=4
     case PUNC:
         return "PUNCU";
         break;
-    case QUOTE:
-        return "QUOTE";
-        break;
     case UNKNOWN:
     default:
         return "UNKNOWN";

@@ -2,8 +2,8 @@
 #define MMAP_H
 #include<iostream>
 #include<vector>
-#include"mpair.h"
-#include"bplustree.h"
+#include<mpair.h>
+#include<bplustree.h>
 
 using namespace std;
 
@@ -13,7 +13,7 @@ class MMap
 public:
 
 
-    typedef BPTree<MPair<K, V> > map_base;
+    typedef BPlusTree<MPair<K, V> > map_base;
     class Iterator{
     public:
         friend class MMap;
@@ -35,9 +35,6 @@ public:
         }
         friend bool operator !=(const Iterator& lhs, const Iterator& rhs){
             return lhs._it!= rhs._it;
-        }
-        friend bool is_null(const Iterator ahhaahaahah){
-            return ahhaahaahah._it.is_null();
         }
 
     private:
@@ -76,7 +73,6 @@ public:
         if(debug){
             cout<<"mmap insert item"<<item<<endl;
         }
-       //  mmap.get(item);
         if(mmap.contains(item)){
             mmap.get(item).value_list.push_back(v);
         }else{
@@ -116,14 +112,14 @@ public:
     }
     Iterator lower_bound(const K& key){
         Iterator walker = mmap.begin();
-        while(!walker._it.is_null()  && *walker < key){
+        while(*walker < key){
             ++walker;
         }
         return walker;
     }
     Iterator upper_bound(const K& key){
         Iterator walker = mmap.begin();
-        while(!walker._it.is_null() && *walker <= key){
+        while(*walker > key){
             ++walker;
         }
         return walker;
@@ -152,7 +148,7 @@ public:
     }
 
 private:
-    BPTree<MPair<K, V> > mmap;
+    BPlusTree<MPair<K, V> > mmap;
 };
 
 

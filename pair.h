@@ -18,7 +18,7 @@ struct Pair{
     Pair(const K& k=K(), const V& v=V()){key= k; value=v;}
 
     friend ostream& operator <<(ostream& outs, const Pair<K, V>& print_me){
-//        outs<<"  map_key: "<<print_me.key<<"  map_val: "<<print_me.value;
+        outs<<"  map_key: "<<print_me.key<<"  map_val: "<<print_me.value;
         return outs;
     }
 
@@ -44,12 +44,6 @@ struct Pair{
         return rhs;
 
     }
-    Pair<K, V> operator += (const Pair<K, V>& rhs){
-            assert(this->key == rhs.key );
-            *this + rhs;
-            return *this;
-        }
-
 };
 
 

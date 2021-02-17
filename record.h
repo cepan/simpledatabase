@@ -5,7 +5,7 @@
 #include<string>
 #include<iomanip>
 #include<vector>
-#include"record_func.h"
+#include<record_func.h>
 
 using namespace std;
 const int MAX_WIDTH = 50;
@@ -15,22 +15,27 @@ class Record{
 public:
     Record();
     Record(char str[][MAX_WIDTH]);
-    Record(std::vector<std::string> v);
+    Record(vector<std::string> v );
 
-    long write(std::fstream& outs);
-    long read(std::fstream& ins, long recno);
+    long write(fstream& outs);
+    long read(fstream & ins, long recno);
+    long get_recno(){return _rec_no;}
+    long record_size(){return MAX_WIDTH * FIELD_AMOUNT;}
 
-    friend std::ostream& operator<<(std::ostream& outs, const Record& r){
-        for(int i=0; i<FIELD_AMOUNT; i++){
-            outs<<std::setw(10)<<r._record[i];
+
+
+
+    friend ostream& operator <<(ostream& outs,
+                          const Record& r){
+        for (int i=0;FIELD_AMOUNT; i++){
+                outs<<setw(15)<<r._record[i];
         }
         return outs;
     }
+    string get_field_i(int i)const {return _record[i];}
+    string operator[](int i )const{return _record[i];}
 
-    long record_size() {return FIELD_AMOUNT*MAX_WIDTH;}
-    long get_recno() const {return _rec_no;}
-    string get_field_i(int i) const {return _record[i];}
-    string operator[](int i) const {return _record[i];}
+
 private:
     char _record[FIELD_AMOUNT][MAX_WIDTH];
     int _rec_no;

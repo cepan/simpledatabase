@@ -1,7 +1,7 @@
 #ifndef MAP_H
 #define MAP_H
-#include"bplustree.h"
-#include"pair.h"
+#include<bplustree.h>
+#include<pair.h>
 #include<iostream>
 
 
@@ -11,7 +11,7 @@ template<typename K, typename V>
 class Map
 {
 public:
-    typedef BPTree<Pair<K, V> > map_base;
+    typedef BPlusTree<Pair<K, V> > map_base;
 
     class Iterator{
     public:
@@ -69,7 +69,6 @@ public:
     V& operator[](const K& key){
         if(DEBUG)
             cout<<"[] in map is being called"<<endl;
-
         Pair<K,V> item (key,V());
         return map.get(item).value;
     }
@@ -154,7 +153,7 @@ public:
     }
 private:
     int key_count;
-    BPTree<Pair<K, V> > map;
+    BPlusTree<Pair<K, V> > map;
 };
 
 
