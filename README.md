@@ -1,5 +1,5 @@
-A small version of a relational database management system (DBMS), as well as a DSL (Domain Specific Language) with which a user can interact with your database.
-The language you will be implementing is similar to the declarative programming language SQL, which is used in the real world to interact with and query databases,
+A small version of a relational database management system (DBMS), as well as a DSL (Domain Specific Language) with which a user can interact with the database.
+The language will be implementing is similar to the declarative programming language SQL, which is used in the real world to interact with and query databases,
 large or small.
 
 lirbaries are designed top- to bottom
