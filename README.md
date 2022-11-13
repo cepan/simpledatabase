@@ -2,7 +2,7 @@ A small version of a relational database management system (DBMS), as well as a 
 The language will be implementing is similar to the declarative programming language SQL, which is used in the real world to interact with and query databases,
 large or small.
 
-lirbaries are designed top- to bottom
+libaries are designed top- to bottom
 
 Purpose:
 Program implements a database that responds to sql-like commands:
